@@ -3,7 +3,7 @@ const root = document.getElementById("root");
 render();
 
 async function render() {
-  const calls = await fetch("http://localhost:3000/").then((response) =>
+  const calls = await fetch("/api/calls").then((response) =>
     response.json()
   );
   calls.sort((a, b) => b.time - a.time);

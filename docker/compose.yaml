@@ -1,8 +1,20 @@
-version: '3.1'
+version: '3.3'
 
 services:
 
-  
+  node:
+    build:
+      context: ../
+      dockerfile: ./docker/node/dockerfile
+    environment:
+      WEBHOOK_MONGO_STRING: mongodb://root:example@mongo:27017
+
+  nginx:
+    build:
+      context: ../
+      dockerfile: ./docker/nginx/dockerfile
+    ports:
+      - "8080:80"
 
   mongo:
     image: mongo

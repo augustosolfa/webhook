@@ -1,0 +1,7 @@
+FROM node
+WORKDIR /home/node
+
+COPY ../../server/ /home/node/
+RUN npm install
+
+CMD ["node", "src/server.js"]
