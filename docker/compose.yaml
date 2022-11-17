@@ -6,6 +6,7 @@ services:
     build:
       context: ../
       dockerfile: ./docker/node/dockerfile
+    restart: always
     environment:
       WEBHOOK_MONGO_STRING: mongodb://root:example@mongo:27017
 
@@ -15,6 +16,7 @@ services:
       dockerfile: ./docker/nginx/dockerfile
     ports:
       - "8080:80"
+    restart: always
 
   mongo:
     image: mongo
